@@ -1,33 +1,25 @@
-# AI Risk Radar
+# AI Risk Radar – Rail Projects MVP
 
 ## Purpose
-AI Risk Radar analyzes project documentation, identifies both obvious and hidden risks, and proposes effective countermeasures.
+AI Risk Radar identifies intuitive and counterintuitive risks in rail infrastructure projects. This MVP is a **portfolio project** to demonstrate AI + engineering synergy, not a production tool.
+
+## How It Works
+- **Input**: Project document (PDF or text) + optional context.
+- **Output**: 10 risks (5 intuitive, 5 counterintuitive) + justification + creative countermeasure.
+- Displays in a **simple table** (future: risk matrix).
 
 ## Tech Stack
-- Backend: Python + FastAPI
-- AI Core: OpenAI GPT-4
+- Backend: FastAPI
+- AI Core: GPT-4
 - UI: Streamlit
-- Deployment: Render / Hugging Face Spaces
-
-## Features
-✔ Upload documents (PDF, DOCX, TXT)  
-✔ AI-driven risk detection  
-✔ Risk scoring + actionable recommendations  
-
-## Installation
-```bash
-git clone git@github.com:hperezt/AI-Risk-Radar.git
-cd AI-Risk-Radar
-pip install -r requirements.txt
-```
-
-## Run the App
-```bash
-streamlit run ui/streamlit_app.py
-```
+- Deployment: Hugging Face Spaces
 
 ## Ethical Safeguards
-- Transparency: Confidence scores + disclaimers  
-- Misuse Prevention: No personal data upload  
-- Bias Mitigation: Present options, not absolutes  
+- Outputs = suggestions, not truths.
+- Confidence scores planned.
+- No personal data.
 
+## Install & Run
+```bash
+pip install -r requirements.txt
+streamlit run ui/streamlit_app.py
