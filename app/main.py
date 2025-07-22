@@ -15,7 +15,7 @@ def root():
 @app.post("/analyze")
 async def analyze_document(file: UploadFile = File(...), context: str = Form("")):
     try:
-        # Guardar archivo temporalmente
+        # Guardar el archivo temporalmente
         with tempfile.NamedTemporaryFile(delete=False) as tmp:
             shutil.copyfileobj(file.file, tmp)
             tmp_path = tmp.name
@@ -28,7 +28,7 @@ async def analyze_document(file: UploadFile = File(...), context: str = Form("")
         else:
             return JSONResponse(content={"error": "Formato no soportado"}, status_code=400)
 
-        # Llamar a la lógica de riesgos
+        # Generar riesgos con GPT
         risks = generate_risks(text, context)
 
         return JSONResponse(content=risks)
